@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const node_schedule_1 = require("node-schedule");
 const puppeteer_1 = require("./puppeteer");
 (0, node_schedule_1.scheduleJob)("0 * * * *", function () {
-    console.log("running a task every 3hr");
+    console.log("running a task every 1hr");
     (0, puppeteer_1.GetData)();
 });
 //# sourceMappingURL=index.js.map
