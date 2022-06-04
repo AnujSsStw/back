@@ -19,6 +19,7 @@ const dbName = dateFormat(date, "dd-mm-yyyy");
 type Data = {
   headline: string | null;
   img: string;
+  link: string;
 };
 
 export const firebase = async (News_18: Data, IndiaToday: Data) => {
