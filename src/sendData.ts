@@ -13,9 +13,6 @@ import { firebaseConfig } from "./firebase.config";
 const app = initializeApp(firebaseConfig);
 const database = getFirestore(app);
 
-const date = new Date();
-const dbName = dateFormat(date, "dd-mm-yyyy");
-
 type Data = {
   headline: string | null;
   img: string;
@@ -23,6 +20,9 @@ type Data = {
 };
 
 export const firebase = async (News_18: Data, IndiaToday: Data) => {
+  const date = new Date();
+  const dbName = dateFormat(date, "dd-mm-yyyy");
+
   const dbRef = doc(database, "news", dbName);
   const docSnap = await getDoc(dbRef);
 

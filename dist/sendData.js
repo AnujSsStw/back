@@ -10,9 +10,9 @@ const firestore_1 = require("firebase/firestore");
 const firebase_config_1 = require("./firebase.config");
 const app = (0, app_1.initializeApp)(firebase_config_1.firebaseConfig);
 const database = (0, firestore_1.getFirestore)(app);
-const date = new Date();
-const dbName = (0, dateformat_1.default)(date, "dd-mm-yyyy");
 const firebase = async (News_18, IndiaToday) => {
+    const date = new Date();
+    const dbName = (0, dateformat_1.default)(date, "dd-mm-yyyy");
     const dbRef = (0, firestore_1.doc)(database, "news", dbName);
     const docSnap = await (0, firestore_1.getDoc)(dbRef);
     if (docSnap.exists()) {
